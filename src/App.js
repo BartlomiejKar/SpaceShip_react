@@ -1,12 +1,16 @@
+import React from 'react';
+import { GlobalStyle } from "./styles/GlobalStyles.js";
+import { Wrapper } from "./styles/Container.js";
 
-import './App.css';
-
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>hello world</h1>
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      <Wrapper>
+        <h1>hello world</h1>
+      </Wrapper>
+    </>
+  )
 }
 
 export default App;
