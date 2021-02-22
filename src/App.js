@@ -14,7 +14,7 @@ const App = () => {
       <Wrapper>
         <Spaceship />
         <Information />
-        <Modal />
+        {/* <Modal /> */}
       </Wrapper>
     </ThemeProvider>
   )

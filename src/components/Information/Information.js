@@ -1,12 +1,12 @@
 import React from 'react';
-import { Section } from "./Information.style"
+import { Article, Section } from "./Information.style"
 
 
 const Information = () => {
     return (
         <Section>
-            <article>Score:0</article>
-            <article>Lives:3</article>
+            <Article>Score:0</Article>
+            <Article>Lives:3</Article>
         </Section>
     )
 }

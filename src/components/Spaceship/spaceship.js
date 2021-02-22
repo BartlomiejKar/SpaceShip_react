@@ -1,11 +1,17 @@
+import { Button } from 'components/Modal/Modal.style';
 import React from 'react';
-import { SpaceshipStyle } from "./spaceship.style"
+import { Ship, Enemy, EnemyBig, Explosion, ExplosionBig, SpaceshipStyle, Bullet } from "./spaceship.style"
 
 
 const Spaceship = () => {
     return (
         <SpaceshipStyle>
-            <p>Game</p>
+            <Ship></Ship>
+            <Enemy></Enemy>
+            <EnemyBig></EnemyBig>
+            <Explosion></Explosion>
+            <ExplosionBig></ExplosionBig>
+            <Bullet></Bullet>
         </SpaceshipStyle>
     )
 }
