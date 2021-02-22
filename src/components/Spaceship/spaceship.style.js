@@ -62,6 +62,9 @@ width: 64px;
 height: 64px;
 background-image: url(${ship});
 animation: ${move8steps} 200ms infinite steps(8);
+position:fixed;
+bottom: 0px;
+
 `;
 export const Enemy = styled.div`
 width: 64px;
