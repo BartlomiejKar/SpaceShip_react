@@ -1,13 +1,11 @@
 import React from 'react';
-import { ModalWindow } from "./Modal.style"
+import { Button, ModalWindow, Paragraph } from "./Modal.style"
 
 const Modal = () => {
     return (
         <ModalWindow>
-            <div>
-                <p>You loose, try again</p>
-            </div>
-            <button>New game</button>
+            <Paragraph>You loose, try again</Paragraph>
+            <Button>New game</Button>
         </ModalWindow>
     )
 }
