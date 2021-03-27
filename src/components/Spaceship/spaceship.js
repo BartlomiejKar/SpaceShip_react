@@ -13,25 +13,18 @@ const Spaceship = () => {
     }, []);
 
 
-    // shipElement.style.bottom = "0px";
-    // let setLeft = shipElement.offsetLeft;
-    // let setWidth = shipElement.offsetWidth;
-    // shipElement.style.left = `${window.innerHeight / 2 - setLeft - setWidth / 2}px`
-
-
-
-    // window.addEventListener("keydown", ({ keyCode }) => {
-    //     switch (keyCode) {
-    //         case 37:
-
-    //             break;
-    //         case 39:
-    //             console.log("prawo");
-    //             break;
-    //         default:
-    //             console.log("inny");
-    //     }
-    // })
+    window.addEventListener("keydown", ({ key }) => {
+        switch (key) {
+            case "ArrowLeft":
+                console.log("lewo")
+                break;
+            case "ArrowRight":
+                console.log("prawo");
+                break;
+            default:
+                console.log("inny");
+        }
+    })
 
     return (
         <SpaceshipStyle>
