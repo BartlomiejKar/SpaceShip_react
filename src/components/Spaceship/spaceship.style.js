@@ -14,15 +14,15 @@ const dimensions = {
 
 const move8steps = keyframes`
 from {
-    left: 0px
+    background-position-x: 0px;
 }
 to {
-    background-position-x: ${dimensions.size * 8 + "px"};
+    background-position-x: ${`${dimensions.size * -8}px`};
 }
 `;
 const move5steps = keyframes`
 from {
-    left: 0px
+    background-position-x: 0px;
 }
 to {
     background-position-x: ${`${dimensions.bigSize * -5}px`};
@@ -30,7 +30,7 @@ to {
 `;
 const move17steps = keyframes`
 from {
-    left: 0px
+    background-position-x: 0px;
 }
 to {
     background-position-x: ${dimensions.size * -17 + "px"};
@@ -38,7 +38,7 @@ to {
 `;
 const move16steps = keyframes`
 from {
-    left: 0px
+    background-position-x: 0px;
 }
 to {
     background-position-x: ${dimensions.bigSize * -16 + "px"};
@@ -47,7 +47,7 @@ to {
 
 const move34steps = keyframes`
 from {
-    left: 0px
+    background-position-x: 0px;
 }
 to {
     background-position-x: ${dimensions.bigSize * -34 + "px"};
@@ -61,7 +61,7 @@ export const Ship = styled.div`
 width: 64px;
 height: 64px;
 background-image: url(${ship});
-animation: ${move8steps} 200ms forwards steps(8);
+animation: ${move8steps} 200ms steps(8) infinite;
 position:fixed;
 `;
 export const Enemy = styled.div`

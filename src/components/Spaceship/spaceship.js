@@ -13,13 +13,18 @@ const Spaceship = () => {
     }, []);
 
 
+
     window.addEventListener("keydown", ({ key }) => {
+        const shipElement = document.getElementById("spaceship")
         switch (key) {
             case "ArrowLeft":
-                console.log("lewo")
+                console.log("lewo");
+                console.log(shipElement);
+                shipElement.style.left = `${parseInt(shipElement.style.left, 10) - 10}px`
                 break;
             case "ArrowRight":
                 console.log("prawo");
+                shipElement.style.left = `${parseInt(shipElement.style.left, 10) + 10}px`
                 break;
             default:
                 console.log("inny");
