@@ -61,10 +61,8 @@ export const Ship = styled.div`
 width: 64px;
 height: 64px;
 background-image: url(${ship});
-animation: ${move8steps} 200ms infinite steps(8);
+animation: ${move8steps} 200ms forwards steps(8);
 position:fixed;
-bottom: 0px;
-
 `;
 export const Enemy = styled.div`
 width: 64px;
@@ -83,13 +81,13 @@ export const Explosion = styled.div`
 width: 64px;
 height: 64px;
 background-image: url(${explosion});
-animation: ${move17steps} 800ms infinite steps(17);
+animation: ${move17steps} 800ms forwards steps(17);
 `;
 export const ExplosionBig = styled.div`
 width: 128px;
 height: 128px;
 background-image: url(${explosionBig});
-animation: ${move34steps} 800ms infinite steps(34);
+animation: ${move34steps} 800ms forwards steps(34);
 `;
 export const Bullet = styled.div`
 width: 12px;
