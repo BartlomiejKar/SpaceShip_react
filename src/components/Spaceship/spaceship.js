@@ -16,15 +16,12 @@ const Spaceship = () => {
 
 
     window.addEventListener("keydown", ({ key }) => {
-        // const shipElement = document.getElementById("spaceship")
         switch (key) {
             case "ArrowLeft":
                 setLeftArrow(true)
-                // shipElement.style.left = `${parseInt(shipElement.style.left, 10) - 10}px`
                 break;
             case "ArrowRight":
                 setRightArrow(true)
-                // shipElement.style.left = `${parseInt(shipElement.style.left, 10) + 10}px`
                 break;
             default:
                 console.log("inny");
@@ -45,10 +42,11 @@ const Spaceship = () => {
     })
     const whichKey = () => {
         const shipElement = document.getElementById("spaceship");
-        if (LeftArrow) {
+        const setPosition = shipElement.offsetLeft + shipElement.offsetWidth / 2;
+        if (LeftArrow && setPosition > 0) {
             shipElement.style.left = `${parseInt(shipElement.style.left, 10) - 5}px`
         }
-        if (RightArrow) {
+        if (RightArrow && setPosition < window.innerWidth) {
             shipElement.style.left = `${parseInt(shipElement.style.left, 10) + 5}px`
         }
     }
