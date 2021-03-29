@@ -94,4 +94,5 @@ width: 12px;
 height: 24px;
 background-size: cover;
 background-image: url(${missile});
+position: absolute
 `;

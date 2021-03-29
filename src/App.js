@@ -7,12 +7,14 @@ import Information from "./components/Information/Information";
 import Modal from "./components/Modal/Modal"
 import { ThemeProvider } from 'styled-components';
 
+
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Wrapper>
         <Spaceship />
+        {/* <ShootBullet /> */}
         <Information />
         {/* <Modal /> */}
       </Wrapper>

@@ -1,35 +1,63 @@
+
+
+import { ShootBullet } from 'components/Bullets/ShootBullet';
 import React, { useEffect, useState } from 'react';
-import styled from "styled-components";
-import { Ship, Enemy, EnemyBig, Explosion, ExplosionBig, SpaceshipStyle, Bullet } from "./spaceship.style"
+
+
+import { Ship, Enemy, EnemyBig, Explosion, ExplosionBig, SpaceshipStyle, Bullet } from "./spaceship.style";
+
+
 
 const Spaceship = () => {
+
     const [LeftArrow, setLeftArrow] = useState(false);
     const [RightArrow, setRightArrow] = useState(false);
+    const [offsetLeft, setoffSetLeft] = useState();
+    const [offsetTop, setOffSetTop] = useState();
+
+    const getPosition = () => {
+        const spaceshipElement = document.getElementById("spaceship");
+        const getPositionSpaceship = spaceshipElement.offsetLeft + spaceshipElement.offsetWidth / 2;
+        setoffSetLeft(getPositionSpaceship)
+    }
+
     useEffect(() => {
         const shipElement = document.getElementById("spaceship");
         shipElement.style.bottom = "0px";
         const setLeft = shipElement.offsetLeft;
         const setWidth = shipElement.offsetWidth
         shipElement.style.left = `${window.innerWidth / 2 - setLeft - setWidth / 2}px`;
+        const offsetLeft = setLeft - setWidth / 2;
+        const offsetTop = shipElement.offsetTop;
+        setoffSetLeft(offsetLeft);
+        setOffSetTop(offsetTop)
+
+
+
     }, []);
 
 
-
-    window.addEventListener("keydown", ({ key }) => {
-        switch (key) {
+    window.addEventListener("keydown", ({ code }) => {
+        switch (code) {
+            case "Space":
+                console.log("spacja");
+                ShootBullet()
+                break;
             case "ArrowLeft":
                 setLeftArrow(true)
+                getPosition()
                 break;
             case "ArrowRight":
                 setRightArrow(true)
+                getPosition()
                 break;
             default:
-                console.log("inny");
+
         }
     })
 
-    window.addEventListener("keyup", ({ key }) => {
-        switch (key) {
+    window.addEventListener("keyup", ({ code }) => {
+        switch (code) {
             case "ArrowLeft":
                 setLeftArrow(false);
                 break;
@@ -37,31 +65,27 @@ const Spaceship = () => {
                 setRightArrow(false)
                 break;
             default:
-                console.log("inny")
         }
     })
     const whichKey = () => {
         const shipElement = document.getElementById("spaceship");
         const setPosition = shipElement.offsetLeft + shipElement.offsetWidth / 2;
         if (LeftArrow && setPosition > 0) {
-            shipElement.style.left = `${parseInt(shipElement.style.left, 10) - 5}px`
+            shipElement.style.left = `${parseInt(shipElement.style.left, 10) - 5}px`;
         }
         if (RightArrow && setPosition < window.innerWidth) {
-            shipElement.style.left = `${parseInt(shipElement.style.left, 10) + 5}px`
+            shipElement.style.left = `${parseInt(shipElement.style.left, 10) + 5}px`;
         }
+
     }
+
 
     requestAnimationFrame(whichKey)
 
     return (
         <SpaceshipStyle>
             <Ship id="spaceship" />
-            {/* <Ship id="shipElement"></Ship> */}
-            {/* <Enemy></Enemy>
-            <EnemyBig></EnemyBig>
-            <Explosion></Explosion>
-            <ExplosionBig></ExplosionBig>
-            <Bullet></Bullet> */}
+            <ShootBullet x={offsetLeft} y={offsetTop} />
         </SpaceshipStyle>
     )
 }
